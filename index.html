@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Echo Escape</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- External UI Header -->
+        <div class="header-ui">
+            <div class="ui-panel">ROOM: <span id="room-number" class="highlight-cyan">1</span></div>
+            <div class="ui-panel">ECHO: <span id="echo-lock" class="locked">LOCKED</span></div>
+            <div class="ui-panel">LIVES: <span id="lives" class="highlight-green">3</span></div>
+            <div class="ui-panel">PTS: <span id="score" class="highlight-yellow">0</span></div>
+        </div>
+        
+        <!-- Game Canvas Area -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="1280" height="720"></canvas>
+            <div id="message-display"></div>
+            <div id="pause-menu" style="display: none;">
+                <h2>PAUSED</h2>
+                <p>Press [P] or [ESC] to resume</p>
+            </div>
+        </div>
+        
+        <!-- External UI Footer / Touch Controls & Instructions -->
+        <div class="footer-ui">
+            <div class="instructions-panel">
+                <h3>PLAYABLE KEYS</h3>
+                <p class="keys-legend">
+                    <span>[&larr;/&rarr; | A/D]</span> Move &nbsp;|&nbsp; 
+                    <span>[UP/W | DOWN/S]</span> Jump &nbsp;|&nbsp; 
+                    <span>[G]</span> Gravity &nbsp;|&nbsp; 
+                    <span>[E]</span> Echo &nbsp;|&nbsp; 
+                    <span>[P]</span> Pause &nbsp;|&nbsp; 
+                    <span>[R]</span> Restart
+                </p>
+                <hr style="border: 1px solid #1a1a2e; margin: 10px 0;">
+                <h3>HINT</h3>
+                <p id="dynamic-instructions">Loading module...</p>
+            </div>
+            
+            <div class="mobile-controls">
+                <div class="d-pad">
+                    <button id="btn-left" class="touch-btn">&larr;</button>
+                    <button id="btn-right" class="touch-btn">&rarr;</button>
+                </div>
+                <div class="action-buttons">
+                    <button id="btn-jump" class="touch-btn">JUMP</button>
+                    <button id="btn-grav" class="touch-btn">GRAV [G]</button>
+                    <button id="btn-echo" class="touch-btn">ECHO [E]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
